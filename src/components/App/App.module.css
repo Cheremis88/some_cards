@@ -1,0 +1,27 @@
+.page {
+  min-inline-size: 360px;
+  max-inline-size: 960px;
+  margin: auto;
+  padding-block-start: 50px;
+  padding-inline: 10px;
+  color: #05b917;
+}
+
+.header {
+  background-color: #111;
+  padding-block: 5% 2%;
+  padding-inline: 10px;
+  border: 2px solid currentColor;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-size: clamp(1.5625rem, 0.2841rem + 5.6818vw, 3.125rem);
+  margin-block-end: 10px;
+}
+
+.slogan {
+  font-size: clamp(0.875rem, 0.3125rem + 2.5vw, 1.25rem);
+}
