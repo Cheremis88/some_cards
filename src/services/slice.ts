@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TCard } from '../utils/types';
 import { getPosts } from '../utils/api';
 import generateColor from '../utils/generateColor';
@@ -18,7 +18,21 @@ export const initialState: TAppState = {
 const mainSlice = createSlice({
   name: 'cards',
   initialState,
-  reducers: {},
+  reducers: {
+    setLike(state, action: PayloadAction<number>) {
+      const card = state.cards.find(
+        item => item.id === action.payload
+      );
+      if (card) {
+        card.like = !card.like;
+      }
+    },
+    removeCard(state, action: PayloadAction<number>) {
+      state.cards = state.cards.filter(
+        (item) => item.id !== action.payload
+      );
+    },
+  },
   selectors: {
     selectCards: (state) => state
   },
@@ -35,7 +49,7 @@ const mainSlice = createSlice({
       .addCase(fetchPosts.fulfilled, (state, action) => {
         const data = action.payload.map(item => {
           const color = generateColor();
-          return { ...item, color };
+          return { ...item, like: false, color };
         });
         state.cards = data;
         state.loading = false;
@@ -44,10 +58,8 @@ const mainSlice = createSlice({
   }
 });
 
-
-export const fetchPosts = createAsyncThunk('posts/get', async () => getPosts());
-
-export const { selectCards } = mainSlice.selectors;
 const mainReducer = mainSlice.reducer;
-
 export default mainReducer;
+export const fetchPosts = createAsyncThunk('posts/get', async () => getPosts());
+export const { selectCards } = mainSlice.selectors;
+export const { setLike, removeCard } = mainSlice.actions;

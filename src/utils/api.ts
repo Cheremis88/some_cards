@@ -8,5 +8,5 @@ async function sendRequest<T>(url: string): Promise<T[]> {
 }
 
 export async function getPosts() {
-  return sendRequest<TPost>('https://jsonplaceholder.typicode.com/posts');
+  return sendRequest<TPost>('https://jsonplaceholder.typicode.com/posts?_limit=30');
 }

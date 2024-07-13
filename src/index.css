@@ -26,6 +26,7 @@ a {
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
+  cursor: pointer;
 }
 
 body {

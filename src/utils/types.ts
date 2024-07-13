@@ -4,4 +4,4 @@ export type TPost = {
   body: string;
 };
 
-export type TCard = TPost & { color: string };
+export type TCard = TPost & { color: string, like: boolean };
