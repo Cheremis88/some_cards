@@ -1,0 +1,50 @@
+.card {
+  aspect-ratio: 1 / 1;
+  position: relative;
+  border: 2px solid;
+  border-radius: 10px;
+  overflow-y: hidden;
+  background-color: #111;
+}
+
+.card::after {
+	content: '';
+	position: absolute;
+	right: 0;
+  left: 0;
+  bottom: 0;
+  height: 20%;
+	background: linear-gradient(to bottom, transparent, #111 85%);
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: 0 0 15px #05b917;
+}
+
+.image {
+  display: flex;
+  aspect-ratio: 5 / 3;
+  border-block-end: 2px solid;
+  margin-block-end: 10px;
+}
+
+.number {
+  color: #111;
+  font-size: 24px;
+  font-weight: bold;
+  margin: auto;
+  filter: drop-shadow(0 0 6px white);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  padding-inline: 10px;
+  margin-block-end: 10px;
+}
+
+.text {
+  font-size: 14px;
+  padding-inline: 10px;
+}

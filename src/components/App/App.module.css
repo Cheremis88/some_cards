@@ -3,7 +3,7 @@
   max-inline-size: 960px;
   margin: auto;
   padding-block-start: 50px;
-  padding-inline: 10px;
+  padding-inline: 30px;
   color: #05b917;
 }
 
@@ -15,6 +15,7 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-block-end: clamp(3.125rem, 0.6944rem + 9.2593vw, 6.25rem);
 }
 
 .title {
@@ -24,4 +25,25 @@
 
 .slogan {
   font-size: clamp(0.875rem, 0.3125rem + 2.5vw, 1.25rem);
+}
+
+.cardList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+@media (width <= 780px) {
+  
+  .cardList {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+@media (width <= 520px) {
+  
+  .cardList {
+    grid-template-columns: 1fr;
+  }
 }

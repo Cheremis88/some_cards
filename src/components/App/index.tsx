@@ -4,24 +4,27 @@ import { useEffect } from 'react';
 import { fetchPosts } from '../../services/slice';
 import { useSelector } from '../../services/store';
 import { selectCards } from '../../services/slice';
+import Card from '../Card';
 
 export default function App() {
+
   const dispatch = useDispatch();
-  const {cards, loading, error} = useSelector(selectCards);
-  console.log('render')
+  const { cards, loading, error } = useSelector(selectCards);
+
   useEffect(() => {
     dispatch(fetchPosts());
   }, []);
+  
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <h1 className={styles.title}>Сдержанное название</h1>
-        <p className={styles.slogan}>Кричащее описание произвольной длины</p>
+        <h1 className={styles.title}>Кричащее название</h1>
+        <p className={styles.slogan}>Сдержанное описание произвольной длины</p>
       </header>
-      {loading && <p>ЗАГРУЗКА</p>}
-      {error && <p>{error}</p>}
-      <ul>
-        {cards.map(item => <li key={item.id} style={{color: item.color}}><h2>{item.title}</h2><p>{item.body}</p></li>)}
+      <ul className={styles.cardList}>
+        {cards.map(card =>
+          <Card key={card.id} card={card} />
+        )}
       </ul>
     </div>
   );

@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { TCard } from '../utils/types';
 import { getPosts } from '../utils/api';
+import generateColor from '../utils/generateColor';
 
 export type TAppState = {
   cards: TCard[];
@@ -32,7 +33,10 @@ const mainSlice = createSlice({
         state.error = 'Не удалось загрузить данные';
       })
       .addCase(fetchPosts.fulfilled, (state, action) => {
-        const data = action.payload.map(item => ({ ...item, color: 'grey' }));
+        const data = action.payload.map(item => {
+          const color = generateColor();
+          return { ...item, color };
+        });
         state.cards = data;
         state.loading = false;
         state.error = '';
