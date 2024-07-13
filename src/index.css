@@ -30,7 +30,7 @@ a {
 
 body {
   font-family: Tahoma, Verdana, sans-serif;
-  background-color: #000;
+  background-color: #111;
   background-image:
       repeating-linear-gradient(90deg, #111 0 2px, transparent 2px 4px),
       repeating-linear-gradient(#111 0 2px, transparent 2px 4px),
