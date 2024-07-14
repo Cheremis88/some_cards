@@ -37,4 +37,5 @@ body {
       repeating-linear-gradient(#111 0 2px, transparent 2px 4px),
       linear-gradient(#007f0c, #004306);
   background-attachment: fixed;
+  overflow-y: scroll;
 }
