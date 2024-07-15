@@ -49,7 +49,8 @@ const mainSlice = createSlice({
       .addCase(fetchPosts.fulfilled, (state, action) => {
         const data = action.payload.map(item => {
           const color = generateColor();
-          return { ...item, like: false, color };
+          const body = item.body + ' ' + item.body;
+          return { ...item, body, color, like: false };
         });
         state.cards = data;
         state.loading = false;

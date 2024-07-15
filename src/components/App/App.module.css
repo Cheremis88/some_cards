@@ -27,7 +27,7 @@
   font-size: clamp(0.875rem, 0.3125rem + 2.5vw, 1.25rem);
 }
 
-.switch {
+.switcher {
   position: relative;
   display: block;
   inline-size: 80px;
@@ -40,11 +40,11 @@
   margin: 0 auto 20px;
 }
 
-.switch:hover {
+.switcher:hover {
   cursor: pointer;
 }
 
-.switch:has(.checkbox:checked) {
+.switcher:has(.checkbox:checked) {
   background: #a05e5e no-repeat 35px center url(../../assets/switch-on.svg);
   background-size: 40px 40px;
 }

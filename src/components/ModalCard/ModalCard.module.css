@@ -1,0 +1,45 @@
+
+
+.test_image {
+  flex: 2;
+  border-radius: 20px 0 0 20px;
+}
+
+.forText {
+  flex: 3;
+  padding: 20px;
+  background-color: white;
+  border-radius: 0 20px 20px 0;
+}
+
+.test_title {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.test_text {
+  font-size: 22px;
+}
+
+@media (width <= 740px) {
+  .test_image {
+    aspect-ratio: 3 / 1;
+    border-radius: 20px 20px 0 0;
+  }
+  .test_text {
+    font-size: 18px;
+  }
+  .forText {
+    border-radius: 0 0 20px 20px;
+  }
+}
+
+@media (width <= 580px) {
+  .test_title {
+    font-size: 24px;
+  }
+  
+  .test_text {
+    font-size: 18px;
+  }
+}

@@ -23,7 +23,7 @@ export default function App() {
         <h1 className={styles.title}>Кричащее название</h1>
         <p className={styles.slogan}>Сдержанное описание произвольной длины</p>
       </header>
-      <label className={styles.switch}>
+      <label className={styles.switcher}>
         <input type="checkbox" className={styles.checkbox} onChange={() => setLikeFilter(!likeFilter)} />
       </label>
       <ul className={styles.cardList}>

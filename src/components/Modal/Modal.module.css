@@ -1,0 +1,63 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  min-width: 360px;
+}
+
+.test {
+  position: relative;
+  max-height: 90vh;
+  width: 60%;
+  display: flex;
+  border-radius: 20px;
+  color: #007f0c;
+}
+
+.button {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  z-index: 1;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  background-image: url('../../assets/cross.svg');
+  background-size: 20px 20px;
+  inline-size: 20px;
+  block-size: 20px;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+@media (width <= 880px) {
+  .test {
+    width: 70%;
+  }
+}
+
+@media (width <= 740px) {
+  .test {
+    width: 80%;
+    flex-direction: column;
+  }
+  .button {
+    top: 15px;
+    right: 15px;
+    filter: drop-shadow(0 0 6px black);
+  }
+}
+
+@media (width <= 580px) {
+  .test {
+    width: 90%;
+  }
+}
