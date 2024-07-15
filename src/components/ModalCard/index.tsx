@@ -9,11 +9,11 @@ type ModalCardProps = {
 export default function ModalCard({ color, title, body }: ModalCardProps) {
   return (
     <>
-      <div className={styles.test_image} style={{ backgroundColor: color }}>
+      <div className={styles.image} style={{ backgroundColor: color }}>
       </div>
-      <div className={styles.forText}>
-        <h3 className={styles.test_title}>{title}</h3>
-        <p className={styles.test_text}>{body}</p>
+      <div className={styles.text_wrapper}>
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.text}>{body}</p>
       </div>
     </>
   );

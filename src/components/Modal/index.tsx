@@ -9,7 +9,7 @@ type ModalProps = {
 export default function Modal({ children, onClick }: ModalProps) {
   return (
     <div className={styles.modal} onClick={onClick}>
-      <div className={styles.test} onClick={evt => evt.stopPropagation()}>
+      <div className={styles.content} onClick={evt => evt.stopPropagation()}>
         <button className={styles.button} onClick={onClick} />
         {children}
       </div>

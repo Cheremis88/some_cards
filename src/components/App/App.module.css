@@ -62,6 +62,12 @@
   gap: 30px;
 }
 
+.message {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
 @media (width <= 780px) {
   .cardList {
     grid-template-columns: 1fr 1fr;

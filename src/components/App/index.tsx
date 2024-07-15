@@ -23,14 +23,20 @@ export default function App() {
         <h1 className={styles.title}>Кричащее название</h1>
         <p className={styles.slogan}>Сдержанное описание произвольной длины</p>
       </header>
-      <label className={styles.switcher}>
-        <input type="checkbox" className={styles.checkbox} onChange={() => setLikeFilter(!likeFilter)} />
-      </label>
-      <ul className={styles.cardList}>
-        {filteredCards.map(card =>
-          <Card key={card.id} card={card} />
-        )}
-      </ul>
+      {
+        loading ? <p className={styles.message}>ЗАГРУЗКА...</p> :
+          error ? <p className={styles.message}>{error}</p> :
+            <>
+              <label className={styles.switcher}>
+                <input type="checkbox" className={styles.checkbox} onChange={() => setLikeFilter(!likeFilter)} />
+              </label>
+              <ul className={styles.cardList}>
+                {filteredCards.map(card =>
+                  <Card key={card.id} card={card} />
+                )}
+              </ul>
+            </>
+      }
     </div>
   );
 }

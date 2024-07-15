@@ -1,45 +1,43 @@
-
-
-.test_image {
+.image {
   flex: 2;
   border-radius: 20px 0 0 20px;
 }
 
-.forText {
+.text_wrapper {
   flex: 3;
   padding: 20px;
   background-color: white;
   border-radius: 0 20px 20px 0;
 }
 
-.test_title {
+.title {
   font-size: 30px;
   margin-bottom: 20px;
 }
 
-.test_text {
+.text {
   font-size: 22px;
 }
 
 @media (width <= 740px) {
-  .test_image {
+  .image {
     aspect-ratio: 3 / 1;
     border-radius: 20px 20px 0 0;
   }
-  .test_text {
+  .text {
     font-size: 18px;
   }
-  .forText {
+  .text_wrapper {
     border-radius: 0 0 20px 20px;
   }
 }
 
 @media (width <= 580px) {
-  .test_title {
+  .title {
     font-size: 24px;
   }
   
-  .test_text {
+  .text {
     font-size: 18px;
   }
 }
